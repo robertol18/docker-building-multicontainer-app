@@ -22,7 +22,7 @@ services:
         context: './server'
       volumes:
         - /usr/src/app/node_modules
-        - ./server:/app/usr/src
+        - ./server:/usr/src/app
       environment:
         - REDIS_HOST=redis
         - REDIS_PORT=6379
@@ -38,7 +38,7 @@ services:
         context: ./client
       volumes:
         - /usr/src/app/node_modules
-        - ./client:/app/usr/src
+        - ./client:/usr/src/app
     
     worker:
       build:
@@ -46,7 +46,7 @@ services:
         context: ./worker
       volumes:
         - ./usr/src/app/node_modules
-        - ./worker:/app/usr/src
+        - ./worker:/usr/src/app
       environment:
         - REDIS_HOST=redis
         - REDIS_PORT=6379
